@@ -1,0 +1,283 @@
+
+$ Linux Commands $
+
+🔹 pwd : present working directory 
+-output :
+	/home/kartik/Java-repo
+-This means:
+
+	/ → root directory
+
+	home → inside home
+
+	kartik → your user directory
+
+	Java-repo → current folder
+	
+📁 What is a Directory?
+
+	A directory is a special type of file that stores and organizes other files and directories.
+
+In simple words:
+
+	A directory is like a folder that holds files and other folders.
+
+🧠 Real-World Analogy
+
+Think of your computer like this:
+
+	🏢 Root (/) → Main building
+
+	📂 Directories → Rooms inside the building
+
+	📄 Files → Documents inside rooms
+
+🔹 In Linux (like Arch Linux)
+
+	Everything is treated as a file.
+
+	Yes — even a directory is technically a file.
+
+	But instead of storing text or data, it stores:
+
+	File names
+
+	Metadata references (inode numbers)
+
+	Structure mapping
+
+🔹 Example
+
+If you run: ls
+
+You might see:
+
+Documents  Downloads  notes.txt
+
+
+	Documents → directory
+
+	Downloads → directory
+
+	notes.txt → regular file
+
+To confirm something is a directory: ls -l
+
+
+You’ll see something like:
+
+drwxr-xr-x  2 kartik users 4096 Feb 16  Documents
+
+
+👉 The first letter tells the type:
+
+	d → directory
+
+	- → regular file
+
+	l → symbolic link
+
+🔹 Technical Definition
+
+	A directory contains:
+
+	Names of files
+
+	Pointers to where those files are stored on disk (inodes)
+
+	It does NOT store the file content itself
+
+	So structure looks like:
+
+	Directory
+	 ├── file1.txt
+	 ├── file2.txt
+	 └── subfolder/
+		└── file3.txt
+
+🔹 Why Directories Are Important
+
+They help you:
+
+	Organize files
+
+	Separate system files from user files
+
+	Maintain hierarchy
+
+	Control permissions
+
+	Without directories, all files would exist in one huge messy list.
+
+🔹 Linux Directory Structure (Important for You)
+
+In Linux, everything starts from:
+
+	/
+
+	This is called the root directory.
+
+	Important system directories include:
+
+	/home → user files
+
+	/etc → configuration files
+
+	/var → logs and variable data
+
+	/bin → essential commands
+
+🔹 Commands Related to Directories
+
+Create a directory:
+
+mkdir test
+
+
+Move into a directory:
+
+cd test
+
+
+Remove a directory:
+
+rmdir test
+
+
+
+🔹  Change the directory - cd
+
+If we want to change the directory we use cd 
+
+cd stands for "change directory"
+
+example : [kartik@archlinux ~]$ cd Desktop
+Output
+-> [kartik@archlinux Desktop]$ 
+
+🔥 Key Differences
+Command	 Meaning	Where It Takes You	Level
+ cd ~	Go to home	/home/yourusername	User level
+ cd /	Go to root	/			System top level
+
+[kartik@archlinux ~]$ cd /
+[kartik@archlinux /]$ ls
+bin   dev  home  lib64       mnt  proc  run   srv  tmp  var
+boot  etc  lib   lost+found  opt  root  sbin  sys  usr
+[kartik@archlinux /]$ cd ~
+[kartik@archlinux ~]$ ls
+Desktop  Documents  Downloads  Java-repo  Music  Pictures  Projects  Public  Templates  Text.txt  Videos
+
+🔹 ls : listing all files in the pwd
+
+[kartik@archlinux ~]$ ls
+Desktop  Documents  Downloads  Java-repo  Music  Pictures  Projects  Public  Templates  Text.txt  Videos
+[kartik@archlinux ~]$ ls -a ls
+.              .bash_profile  Desktop    .git        .local    Projects  Templates  .vscode
+..             .bashrc        Documents  .gitconfig  Music     Public    Text.txt   .vscode-oss
+.bash_history  .cache         .dotnet    .java       Pictures  .purple   .var
+.bash_logout   .config        Downloads  Java-repo   .pki      .redhat   Videos
+[kartik@archlinux ~]$ ls -t
+Documents  Projects  Java-repo  Downloads  Desktop  Pictures  Text.txt  Music  Public  Templates  Videos
+[kartik@archlinux ~]$ ls -r
+Videos  Text.txt  Templates  Public  Projects  Pictures  Music  Java-repo  Downloads  Documents  Desktop
+[kartik@archlinux ~]$ ls -r -t
+Videos  Templates  Public  Music  Text.txt  Pictures  Desktop  Downloads  Java-repo  Projects  Documents
+[kartik@archlinux ~]$ ls -r -a
+.vscode-oss  Text.txt   Public    Music      .gitconfig  Documents  .bashrc        ..
+.vscode      Templates  Projects  .local     .git        Desktop    .bash_profile  .
+Videos       .redhat    .pki      Java-repo  Downloads   .config    .bash_logout
+.var         .purple    Pictures  .java      .dotnet     .cache     .bash_history
+[kartik@archlinux ~]$ ls -t -a
+Documents      Projects    .cache       Desktop  .pki      .purple  Templates     .bash_profile
+.config        .           .vscode-oss  .redhat  Pictures  .local   Videos        .bashrc
+.bash_history  .gitconfig  Downloads    .dotnet  Text.txt  Music    ..
+.git           Java-repo   .java        .vscode  .var      Public   .bash_logout
+[kartik@archlinux ~]$ 
+
+
+📌 Absolute Path vs Relative Path
+1️⃣ Absolute Path
+
+	An absolute path is the complete path starting from the root directory /.
+
+It always begins with:
+
+	/
+
+	Example:
+	/home/kartik/Java-repo/Main.java
+No matter where you are in the system, this path will always point to the same file.
+
+🧠 Think of it like:
+
+	A full home address:
+
+	Country → City → Street → House Number
+
+	You can reach it from anywhere.
+
+2️⃣ Relative Path
+
+	A relative path is defined relative to your current working directory.
+
+	It does NOT start with /.
+
+	Example:
+
+	If you are currently inside:
+
+	/home/kartik
+
+	Then:
+
+	cd Java-repo is a relative path.
+
+	Because it depends on where you are.
+
+🔥 Visual Example
+
+Filesystem:
+
+/
+└── home
+     └── kartik
+           ├── Java-repo
+           │     └── Main.java
+           └── notes.txt
+
+
+If your current directory is: /home/kartik
+
+	Absolute:
+	cd /home/kartik/Java-repo
+
+	Relative:
+	cd Java-repo
+
+	Both go to same place.
+
+📌 Special Relative Path Symbols
+
+	These are very important 👇
+
+	. → Current directory
+	.. → Parent directory
+	~ → Home directory
+
+Example:
+
+	If you are in: /home/kartik/Java-repo
+
+	cd ..
+
+	Takes you to: /home/kartik
+
+🔍 Core Differences
+   Absolute Path				Relative Path
+Starts with /				Does NOT start with /
+Independent of current location		Depends on current directory
+Always same destination			Changes based on where you are
+More precise				Shorter and faster to type
+
+

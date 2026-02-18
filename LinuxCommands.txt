@@ -280,4 +280,8 @@ Independent of current location		Depends on current directory
 Always same destination			Changes based on where you are
 More precise				Shorter and faster to type
 
+▹ Executing multiple Commands in console via ';'
+Example: 
+[kartik@archlinux ~]$ echo -n "Hello " ; echo "Kartik"
+Hello Kartik
 

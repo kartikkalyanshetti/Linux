@@ -1,0 +1,14 @@
+Linux users are categorized in 3 Categories : 
+# System Accounts : 
+--> They are responsible for running background tasks on your system (as of : webserver,database etc)
+-->They dont have a home directory
+
+#Regular Users:
+-->They have access to their own file and directories
+-->They cannot perform administrative etasks or access other user's files without permission
+
+#Superuser(root):
+--> It has urestricted access to the entire system (including files in the home directories of the regular user
+--> can add/remove users,install software
+--can change the configuration of the system
+

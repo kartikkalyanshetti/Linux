@@ -11,8 +11,8 @@ $ Software License Types
 ▪ MIT License
 ▪ Unlicense
 
-What is a kernel ?
-    Its core of linux which is a low level computer program
+What is a kernel ? 
+    Its core of linux which is a low level computer program 
         which functions as : Bridge between User and the COmputer resources .
 
 Different distributions have different scripts and utilities to launch programs

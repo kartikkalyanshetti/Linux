@@ -34,3 +34,6 @@ o Installation
     o Support Versions
         ▪ Short-term
         ▪ Long-term
+Bash : Born 
+	Again	
+	 SHell Hence Bash shell 

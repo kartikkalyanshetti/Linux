@@ -37,3 +37,97 @@ o Installation
 Bash : Born 
 	Again	
 	 SHell Hence Bash shell 
+
+
+
+Kernel : 
+
+The Role of the Kernel
+	-The kernel is the core component of an operating system. 
+	-It acts as a bridge, allowing the hardware to communicate with the software. 
+	-The kernel manages system resources, such as the CPU, memory, and peripheral devices. 
+	-Essentially, the kernel controls everything that happens on your system. 
+	-While other UNIX-like systems such as BSD and MINIX were being developed, they all lacked a freely available and unified kernel.
+
+o The Birth of the Linux Kernel
+
+This brings us to 1991, when a Finnish student named Linus Torvalds began developing a new kernel as a personal project. This kernel, which we now know as the Linux kernel, filled the missing piece of the GNU operating system. The combination of the GNU tools and the Linux kernel created the complete, open-source operating system that is widely used today. This milestone was a pivotal moment in the history of Linux.
+
+o A Linux system is divided into three main parts:
+
+	o Hardware - This includes the physical components of your computer, such as the CPU, memory, and storage devices.
+	o Linux Kernel - As the core of the operating system, the kernel manages the hardware and facilitates communication between software and hardware.
+	o User Space - This is the environment where you, the user, interact with the system through applications and command-line interfaces.
+
+DIFFERENT LINUX DISTROS :
+DEBIAN Distro uses : apt (Advance Package Tool) to install/upgrade/Manage softwares,libraries etc
+
+RED HAT ENTERPRISE LINUX (RHEL) uses: RPM (Red Hat Package Manager) format for its software packages. For managing these packages, it provides high-level tools like YUM (Yellowdog Updater, Modified) and its successor, DNF (Dandified YUM). 
+The Enterprise Advantage
+The primary appeal of RHEL lies in its suitability for enterprise linux systems. It is designed for mission-critical workloads, offering a predictable release cycle, long-term support (up to 10 years or more), and a vast ecosystem of certified hardware and software. This makes it a reliable foundation for servers, cloud computing, and containerized applications in large-scale corporate environments.
+
+UBUNTU : BASED ON DEBIAN OS USES APT as it package manager 
+It developed its own desktop environment that is GNOME , gives out that feel of Windows & Mac OS . 
+
+FEDORA : SPONSORED BY REDHAT TO OPENSOURCE COMMUNITY , same as RHEL WHICH USES RPM as its Package manager . Where as fedora is free to use as of RHEL which needs subscription to be used.
+
+LINUX MINT : BASED ON UBUNTU USES APT AS ITS PACKAGE MANAGER
+
+GENTOO: uses PORTAGE as its package manager 
+
+ARCH LINUX: uses Pacman as its package manager
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+BASH (bourne again shell)
+
+The $ symbol at the end indicates that the shell is ready to accept commands from a regular user. You do not type this symbol when entering commands; it is purely informational.
+------------------------------------------------------------------------------------------------------------------------
+In Linux, 
+--> A core concept is that everything is treated as a file. 
+	--> These files are organized within a hierarchical structure known as the filesystem. 
+		--> Understanding this structure is key to navigating your system effectively.
+
+
+The Directory Tree in Linux
+	--> The entire filesystem starts from a single top-level directory called the root directory, 
+	-> Represented by a forward slash (/). 
+
+From the root, 
+	--> the directory tree in linux branches out into various subdirectories
+	--> which can contain files and further subdirectories.
+------------------------------------------------------------------------------------------------------------------------
+# (PWD PRESENT WORKING DIRECTORY)To find your current directory linux, simply type the linux pwd command and press Enter. It prints the absolute path to your present location on the command line.
+
+	--> pwd
+------------------------------------------------------------------------------------------------------------------------
+# (CD CHANGE DIRECTORY) To move around the Linux filesystem, you'll use paths to specify your destination.
+The primary tool for this is the cd (change directory) command. 
+Understanding how to use this cd linux command is a fundamental skill for working in the terminal or cd command prompt.
+
+	--> cd .. (going one directory back)
+	--> cd home/kartik/Desktop (Absolute path)
+	--> cd ~ (going to home directory)
+	--> cd - (previous directory): Takes you back to the last directory you were in.
+------------------------------------------------------------------------------------------------------------------------	
+# (LIST) By default, the ls command will list the directories and files in your current directory. However, you can also specify a path to list the contents of a different directory.
+
+	--> ls (list directories/files in that directory)
+	--> ls -a (shows all directories as well as files that are hidden as well)
+	--> ls -l (-l for "long". This option provides a detailed list of files in a long format. 
+			This will show you detailed information, starting from the left: file permissions, 
+											 number of links, 
+											 owner name, 
+											 owner group, 
+											 file size, 
+											 timestamp of last modification, 
+											 the file or directory name.)
+	--> ls -r (lists files and directories in reverse alphabetical order.)
+
+Combining Command Flags
+Commands have flags (also called arguments or options) to add more functionality. As we saw with -a and -l, you can combine them into a single command like ls -la. The order of the flags usually doesn't matter, so ls -al would work identically. You can also add the reverse flag: "ls -lar ".
+
+------------------------------------------------------------------------------------------------------------------------
+
+

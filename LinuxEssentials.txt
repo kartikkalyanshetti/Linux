@@ -130,4 +130,43 @@ Commands have flags (also called arguments or options) to add more functionality
 
 ------------------------------------------------------------------------------------------------------------------------
 
+Date : 12 March 1:04 am 
+
+Pipe & Tee 
+
+Pipe : Pass the output to next command 
+	how do you do it using the | operator between two commands 
+
+--> command 1 | command 2 File 
+
+So order always executes from left to right that is command 1 gets run the output of command 1 is passed as input for the next command and if you give a file name previously existing if not it will create a new one in your pwd . 
+
+Example : 
+--> ls | Cat input.txt
+
+tee — “Send output to BOTH screen and file” Use "tee" command
+	Basic Syntax
+		--> command | tee filename
+
+Example:
+
+	--> ls | tee files.txt
+
+Result:
+
+	Shows the ls output on the terminal
+	Also saves it into files.txt
+
+Simple Way to Remember
+
+Pipe |
+👉 connect commands
+
+Tee tee
+👉 duplicate output
+
+|   → send output forward
+tee → split output
+
+
 
